@@ -42,13 +42,8 @@ public class TDEngineSink extends RichSinkFunction<String> implements Serializab
             connProps.setProperty("timezone", "UTC-8");
             logger.info("init Conn ==>"+connProps);
             connProps.setProperty("batchfetch", "true");
-            //原生url
-            //jdbc:TAOS://172.16.101.216:16030/demo?user=root&password=password
-            //rest api url
-            //jdbc:TAOS-RS://172.16.101.216:16041/demo?user=root&password=password
-            //测试环境连接信息
-            //jdbc:TAOS://172.16.101.216:16030/demo?user=root&password=password
-            String jdbcurl = "jdbc:TAOS-RS://172.16.101.216:16041/demo?user=root&password=password";
+            
+            String jdbcurl = "jdbc:TAOS-RS://host:16041/demo?user=root&password=password";
             connection = DriverManager.getConnection(jdbcurl, connProps);
 
 
